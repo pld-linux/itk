@@ -1,0 +1,22 @@
+--- itk/Makefile.in.orig	2003-12-31 17:35:30.000000000 +0100
++++ itk/Makefile.in	2003-12-31 18:28:13.290461032 +0100
+@@ -80,7 +80,7 @@
+ # library that we are building.
+ #========================================================================
+ 
+-PKG_LIB_FILE	= @PKG_LIB_FILE@
++PKG_LIB_FILE	= @PKG_LIB_FILE@.0.0
+ PKG_STUB_LIB_FILE = @PKG_STUB_LIB_FILE@
+ 
+ lib_BINARIES	= $(PKG_LIB_FILE)
+@@ -315,8 +315,8 @@
+ 
+ $(PKG_LIB_FILE): $(PKG_OBJECTS)
+ 	-rm -f $(PKG_LIB_FILE)
+-	${MAKE_LIB}
+-	$(RANLIB) $(PKG_LIB_FILE)
++	${MAKE_LIB} -Wl,-soname,libitk$(VERSION).so.0
++	-ln -sf $(PKG_LIB_FILE) libitk$(VERSION).so.0
+ 
+ $(PKG_STUB_LIB_FILE): $(PKG_STUB_OBJECTS)
+ 	-rm -f $(PKG_STUB_LIB_FILE)
