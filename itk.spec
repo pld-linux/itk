@@ -93,6 +93,8 @@ ln -sf $libfile $RPM_BUILD_ROOT%{_libdir}/libitk.so
 	-e 's,@ITK_SRC_DIR@,%{_ulibdir},' itkConfig.sh
 install itkConfig.sh $RPM_BUILD_ROOT%{_ulibdir}
 
+%{__sed} -i -e 's#%{_ulibdir}#%{_libdir}#' $RPM_BUILD_ROOT%{_ulibdir}/itk%{version}/pkgIndex.tcl
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
