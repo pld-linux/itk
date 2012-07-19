@@ -1,9 +1,9 @@
 Summary:	[incr Tk] - object-oriented extension of the Tcl/Tk language
 Summary(pl.UTF-8):	[incr Tk] - obiektowo zorientowane rozszerzenie języka Tcl/Tk
+%define snap	20111128
 Name:		itk
 Version:	3.4
-%define snap	20111128
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	distributable
 Group:		Development/Languages/Tcl
 #Source0:	http://downloads.sourceforge.net/incrtcl/%{name}%{version}.tar.gz
