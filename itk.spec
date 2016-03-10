@@ -2,20 +2,18 @@ Summary:	[incr Tk] - object-oriented extension of the Tcl/Tk language
 Summary(pl.UTF-8):	[incr Tk] - obiektowo zorientowane rozszerzenie języka Tcl/Tk
 Name:		itk
 %define	vermaj	3.4
-Version:	%{vermaj}.1
+Version:	%{vermaj}.2
 Release:	1
-License:	distributable
+License:	Tcl (BSD-like)
 Group:		Development/Languages/Tcl
 Source0:	http://downloads.sourceforge.net/incrtcl/%{name}%{version}.tar.gz
-# Source0-md5:	c60cb37733dea3f1bc320fcd311ced13
+# Source0-md5:	e05b7a47f3dd026345d98fa3a4cdfde1
 Patch0:		%{name}-soname.patch
 Patch1:		%{name}-tclconfig.patch
 URL:		http://incrtcl.sourceforge.net/itk/
 BuildRequires:	autoconf >= 2.13
 BuildRequires:	itcl-devel >= 3.4.1
-BuildRequires:	tar >= 1:1.22
 BuildRequires:	tk-devel >= 8.4.6
-BuildRequires:	xz
 Requires:	itcl >= 3.4.1
 Requires:	tk >= 8.4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -101,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc license.terms
 %attr(755,root,root) %{_libdir}/libitk%{vermaj}.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libitk%{vermaj}.so.0
 %dir %{_ulibdir}/itk%{vermaj}
@@ -118,5 +117,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libitk%{vermaj}.so
 %attr(755,root,root) %{_libdir}/libitk.so
-%attr(755,root,root) %{_ulibdir}/itkConfig.sh
+%{_ulibdir}/itkConfig.sh
 %{_includedir}/itk*.h
