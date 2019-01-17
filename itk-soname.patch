@@ -20,13 +20,13 @@
  
  $(PKG_STUB_LIB_FILE): $(PKG_STUB_OBJECTS)
  	-rm -f $(PKG_STUB_LIB_FILE)
---- itk4.0.2/pkgIndex.tcl.in.orig	2016-02-16 21:02:10.000000000 +0100
-+++ itk4.0.2/pkgIndex.tcl.in	2016-03-10 21:45:05.467914211 +0100
-@@ -1,5 +1,5 @@
- # Tcl package index file, version 1.0
+--- itk4.1.0/pkgIndex.tcl.in.orig	2019-01-17 19:22:30.327974793 +0100
++++ itk4.1.0/pkgIndex.tcl.in	2019-01-17 19:57:16.177950975 +0100
+@@ -2,5 +2,5 @@
  
- if {![package vsatisfies [package present Tcl] 8.6]} return
+ if {![package vsatisfies [package provide Tcl] 8.6]} return
+ if {[string length [package provide Itcl]] && ![package vsatisfies [package provide Itcl] 4.1]} return
 -package ifneeded itk @PACKAGE_VERSION@ [list load [file join $dir "@PKG_LIB_FILE@"] Itk]
 -package ifneeded Itk @PACKAGE_VERSION@ [list load [file join $dir "@PKG_LIB_FILE@"] Itk]
-+package ifneeded itk @PACKAGE_VERSION@ [list load "@libdir@/@PKG_LIB_FILE@.0" Itk]
-+package ifneeded Itk @PACKAGE_VERSION@ [list load "@libdir@/@PKG_LIB_FILE@.0" Itk]
++package ifneeded itk @PACKAGE_VERSION@ [list load "@libdir@"/"@PKG_LIB_FILE@.0" Itk]
++package ifneeded Itk @PACKAGE_VERSION@ [list load "@libdir@"/"@PKG_LIB_FILE@.0" Itk]

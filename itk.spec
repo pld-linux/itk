@@ -1,19 +1,19 @@
 Summary:	[incr Tk] - object-oriented extension of the Tcl/Tk language
 Summary(pl.UTF-8):	[incr Tk] - obiektowo zorientowane rozszerzenie języka Tcl/Tk
 Name:		itk
-Version:	4.0.2
+Version:	4.1.0
 Release:	1
 License:	Tcl (BSD-like)
 Group:		Development/Languages/Tcl
 Source0:	http://downloads.sourceforge.net/incrtcl/%{name}%{version}.tar.gz
-# Source0-md5:	58f46bd5bba8d2ef12a1c553d8da6434
+# Source0-md5:	600df0a12868507c52d46fd59d4e1c16
 Patch0:		%{name}-soname.patch
 Patch1:		%{name}-tclconfig.patch
 URL:		http://incrtcl.sourceforge.net/itk/
 BuildRequires:	autoconf >= 2.13
-BuildRequires:	itcl-devel >= 4.0
+BuildRequires:	itcl-devel >= 4.1
 BuildRequires:	tk-devel >= 8.6
-Requires:	itcl >= 4.0
+Requires:	itcl >= 4.1
 Requires:	tk >= 8.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +41,7 @@ Summary:	Header files for itk library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki itk
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	itcl-devel >= 4.0
+Requires:	itcl-devel >= 4.1
 Requires:	tk-devel >= 8.6
 
 %description devel
